@@ -45,11 +45,6 @@ body {
   color: var(--color-basic-gray-click);
 }
 
-/*img {*/
-/*  max-width: 100%;*/
-/*  object-fit: contain;*/
-/*}*/
-
 /*Кастомные переменные для пере использования*/
 :root {
   /*BASIC цвета*/
@@ -64,12 +59,14 @@ body {
   --color-basic-gray: #3D546F;
   --color-basic-gray-hover: #32425C;
   --color-basic-gray-click: #293449;
+  --color-basic-gray-click-rgba: 41, 52, 73;
 
   --color-basic-gray-light: #C5C5C5;
 
   --color-basic-background: #F1F5F7;
 
   --color-basic-white: #FFFFFF;
+  --color-basic-white-rgba: 255, 255, 255;
 
 
   /*SPECIAL цвета*/
@@ -87,6 +84,7 @@ body {
   /*цвета которые есть в макете, но нет в стилях*/
   --color-blue-light: #F3F7F9;
   --color-black: #000000;
+  --color-basic-gray-sale: #A9A9A9;
 
   /* Текст  */
   --text-family-pt-sans: 'PT Sans', sans-serif;
@@ -139,6 +137,11 @@ body {
   min-width: 1170px;
   width: 100%;
   margin: 0 auto;
+}
+
+/* Класс для сетки по стайлгайду*/
+.page-container-grid {
+  min-width: 1200px;
 }
 
 .title-1 {
@@ -244,6 +247,10 @@ body {
   background-color: var(--color-basic-gray-click);
 }
 
+.footer {
+  color: var(--color-basic-white);
+}
+
 .footer-container {
   display: flex;
   justify-content: space-between;
@@ -253,6 +260,9 @@ body {
   background-image: url("../images/advantages-background.png");
   background-repeat: repeat;
   background-color: #F4F7F9;
+  padding-top: 52px;
+  padding-bottom: 52px;
+  width: 100%;
 }
 
 .navigation-list {
@@ -283,7 +293,7 @@ body {
 }
 
 .navigation-menu .navigation-link {
-  padding: 20px 26px 25px;
+  padding: 21px 26px 24px 26px;
   display: block;
 }
 
@@ -339,12 +349,13 @@ body {
 }
 
 .button {
-  border: solid 1px var(--color-basic-white);
   cursor: pointer;
   display: inline-block;
+  border-radius: 2px;
 }
 
 .button-promo {
+  border: solid 1px var(--color-basic-white);
   display: flex;
   align-items: center;
   width: 180px;
@@ -365,6 +376,14 @@ body {
   min-width: 16px;
   min-height: 16px;
   margin-right: 5px;
+}
+
+.button-promo:hover {
+  opacity: 0.6;
+}
+
+.button-promo:active {
+  opacity: 0.8;
 }
 
 .bg-yellow {
@@ -428,6 +447,7 @@ body {
 .catalog-list {
   list-style-type: none;
   margin: 0;
+  margin-bottom: 30px;
   padding: 0;
 
   display: grid;
@@ -441,7 +461,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 27px 27px 25px 27px;
+  padding: 26px 26px 25px 26px;
   text-align: center;
   justify-content: space-between;
 }
@@ -450,16 +470,70 @@ body {
   box-shadow: var(--shadow-big);
 }
 
+.catalog-card:hover .catalog-card-control {
+  display: flex;
+}
+
+.catalog-card:hover .catalog-card-image {
+  opacity: 0.1;
+}
+
 .pagination-wrapper {
   display: flex;
   justify-content: center;
+  margin-bottom: 53px;
 }
 
 .pagination-list {
   list-style-type: none;
   margin: 0;
+  margin-right: 17px;
   padding: 0;
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pagination-item:not(:last-child) {
+  margin-right: 8px;
+}
+
+.pagination-link {
+  width: 50px;
+  height: 45px;
+  display: block;
+  text-align: center;
+  padding: 14px;
+  background-color: var(--color-basic-gray);
+  border-radius: 2px;
+  text-decoration: none;
+  color: var(--color-basic-white);
+  font-weight: var(--text-weight-bold);
+  font-size: var(--text-paragraph-size-2);
+  line-height: var(--text-paragraph-size-2);
+}
+
+.pagination-link:hover {
+  opacity: 0.6;
+}
+
+.pagination-link:active {
+  opacity: 0.8;
+}
+
+.pagination-current {
+  background-color: var(--color-basic-white);
+  color: var(--color-basic-gray);
+}
+
+.pagination-current:hover {
+  outline: solid var(--color-basic-gray) 1px;
+}
+
+.pagination-current:active {
+  background-color: var(--color-basic-gray);
+  color: var(--color-basic-white);
+  outline: 0;
 }
 
 /* TODO: доделать кнопки, сильно много времени потратил*/
@@ -491,6 +565,15 @@ body {
   /*z-index: -1;*/
 }
 
+.catalog-card-price-sale {
+  text-decoration: line-through;
+  font-size: var(--text-postscript-size-1);
+  font-weight: var(--text-weight-bold);
+  line-height: var(--text-postscript-height);
+  letter-spacing: 2px;
+  color: var(--color-basic-gray-sale);
+}
+
 .advantages-list {
   list-style-type: none;
   margin: 0;
@@ -500,11 +583,6 @@ body {
   gap: 30px;
   grid-template-columns: repeat(3, 370px);
   grid-auto-rows: minmax(382px, max-content);
-}
-
-.advantages {
-  padding-top: 52px;
-  padding-bottom: 52px;
 }
 
 .advantages-item {
@@ -518,7 +596,12 @@ body {
 
 .advantages-icon {
   fill: var(--color-basic-red-hover);
-  margin-bottom: 44px;
+  margin-bottom: 46px;
+}
+
+/* Изменение цвета иконки в сервисах, не понятно по стайлгайду и макету как менять цвет*/
+.advantages-item:hover .advantages-icon {
+  fill: var(--color-basic-gray);
 }
 
 .advantages-text {
@@ -530,7 +613,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding-top: 52px;
-  padding-bottom: 52px;
+  margin-bottom: 52px;
 }
 
 .about-company-block {
@@ -633,9 +716,9 @@ body {
   position: relative;
   width: 50px;
   height: 50px;
-  background-color: var(--color-basic-gray-click);
-  opacity: 0.6;
+  background-color: rgba(var(--color-basic-gray-click-rgba), 0.6);
   border: 0;
+  cursor: pointer;
 }
 
 .slider-button::before {
@@ -650,8 +733,23 @@ body {
   content: "";
 }
 
+.slider-button:hover {
+  opacity: 0.6;
+}
+
+.slider-button:active {
+  opacity: 0.9;
+}
+
 .slider-next.slider-button::before {
   transform: rotate(180deg);
+}
+
+.slider-button-link {
+  position: absolute;
+  bottom: 48px;
+  left: 51px;
+  text-decoration: none;
 }
 
 .slider-pagination {
@@ -685,6 +783,14 @@ body {
   background-color: var(--color-basic-white);
 }
 
+.slider-pagination-button:hover {
+  opacity: 0.6;
+}
+
+.slider-pagination-button:active {
+  opacity: 0.8;
+}
+
 .slider-description {
   position: absolute;
   top: 53px;
@@ -699,11 +805,12 @@ body {
 }
 
 .slider-img {
-  display: block;
+  vertical-align: middle;
 }
 
 .catalog-card-title {
   margin: 0;
+  margin-bottom: 11px;
 }
 
 .catalog-title {
@@ -723,6 +830,7 @@ body {
 
 .catalog-card-image {
   margin-bottom: 14px;
+  vertical-align: middle;
 }
 
 .catalog-card-top {
@@ -737,3 +845,211 @@ body {
   align-items: center;
   top: 39px;
 }
+
+.button-catalog {
+  border-radius: 2px;
+  border: 0;
+  background-color: var(--color-basic-green);
+  display: flex;
+  align-items: center;
+  width: 135px;
+  padding: 11px 24px 11px 23px;
+  color: var(--color-basic-white);
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: 11px;
+}
+
+.button-catalog::before {
+  background-image: url("../images/icons/cart.svg");
+  background-size: 100% auto;
+  display: block;
+  background-repeat: no-repeat;
+  content: "";
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  min-height: 14px;
+  margin-right: 9px;
+}
+
+.button-catalog:hover {
+  background-color: var(--color-basic-green-hover);
+}
+
+.button-catalog:active {
+  background-color: var(--color-basic-green-click);
+}
+
+.button-catalog-inverse {
+  border-radius: 2px;
+  border: solid var(--color-basic-green) 2px;
+  background-color: var(--color-basic-white);
+  width: 135px;
+  padding: 9px 7px 9px 8px;
+  color: var(--color-basic-gray-hover);
+  cursor: pointer;
+}
+
+.button-catalog-inverse:hover {
+  border: solid var(--color-basic-gray) 2px;
+}
+
+.button-catalog-inverse:active {
+  border: solid var(--color-basic-gray-light) 2px;
+  color: var(--color-basic-gray-light);
+}
+
+.catalog-card-control {
+  display: none;
+}
+
+.button-red {
+  background-color: var(--color-basic-red);
+  padding: 13px 6px 14px 6px;
+  width: 195px;
+  border: 0;
+  color: var(--color-basic-white);
+}
+
+.button-red:hover {
+  background-color: var(--color-basic-red-hover);
+}
+
+.button-red:active {
+  background-color: var(--color-basic-red-click);
+}
+
+.about-company-link {
+  text-decoration: none;
+}
+
+.advantages-title-h2 {
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.advantages-title {
+  margin: 0;
+  margin-bottom: 21px;
+}
+
+.advantages-description {
+  margin: 0;
+}
+
+.about-company-title {
+  margin: 0;
+  margin-bottom: 23px;
+  display: block;
+}
+
+.about-company-text {
+  margin: 0;
+  width: 500px;
+  margin-bottom: 26px;
+}
+
+.about-company-text:last-of-type {
+  margin-bottom: 52px;
+}
+
+.about-company-contact-text {
+  margin: 0;
+  margin-bottom: 28px;
+}
+
+.map-img {
+  vertical-align: middle;
+}
+
+.logo-img {
+  vertical-align: middle;
+}
+
+.logo-footer {
+  display: block;
+  width: 225px;
+  height: 56px;
+  margin-bottom: 21px;
+}
+
+.footer-address {
+  margin-bottom: 24px;
+}
+
+.footer-address p {
+  margin: 0;
+  font-style: normal;
+}
+
+.footer-social-list {
+  list-style-type: none;
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-social-item:not(:last-child) {
+  /* 2px - по стайлгайду, а по макету 17px, но в стайлгайде еще и ссылки на другие соц.сети */
+  /*margin-right: 2px;*/
+  margin-right: 17px;
+}
+
+.footer-social-item {
+  width: 36px;
+  height: 36px;
+  background-color: rgba(var(--color-basic-white-rgba), 0.1);
+  border-radius: 50%;
+}
+
+.footer-social-item:hover {
+  background-color: var(--color-basic-gray-click);
+}
+
+.footer-social-item:active {
+  background-color: var(--color-basic-gray);
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.footer-social-link::before {
+  content: "";
+  background-image: url("../images/icons/arrow.svg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.twitter.footer-social-link::before {
+  background-image: url("../images/icons/social/twitter.svg");
+  width: 22px;
+  height: 18px;
+}
+
+.vk.footer-social-link::before {
+  background-image: url("../images/icons/social/vk.svg");
+  width: 18px;
+  height: 10px;
+}
+
+.ok.footer-social-link::before {
+  background-image: url("../images/icons/social/ok.svg");
+  width: 22px;
+  height: 22px;
+}
+
+.copyright {
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 22px;
+}
+

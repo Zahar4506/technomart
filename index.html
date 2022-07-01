@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="stylesheet" href="styles/styles.css">
 </head>
-<body>
+<body class="page-container-grid">
 <header class="page-header">
   <div class="header-about-company">
     <div class="page-container">
@@ -24,7 +24,7 @@
   <div class="header-search-user">
     <div class="page-container">
       <a class="logo" href="#">
-        <img class="logo-header" src="./images/logo.png" width="220" height="50" alt="Логотип ТЕХНОМАРТ">
+        <img class="logo-img" src="./images/logo.png" width="220" height="50" alt="Логотип ТЕХНОМАРТ">
       </a>
       <form class="search-form" action="https://echo.htmlacademy.ru/" method="post">
         <label class="search-catalog-label visually-hidden" for="search-catalog">Поле поиска</label>
@@ -37,6 +37,7 @@
 
   <nav class="header-navigation">
     <div class="page-container">
+      <!--  TODO: Меню сделано по стайлгайду, оно не будет работать под pixel-perfect   -->
       <ul class="navigation-list navigation-menu">
         <!-- Класс navigation-active на li для отображения активного пункта меню -->
         <li class="navigation-item navigation-active">
@@ -104,6 +105,7 @@
   <section class="promo page-container">
     <h2 class="visually-hidden">Актуальные предложения.</h2>
 
+    <!--  TODO: Отступы сделаны через gap в дизайне они сдвинуты, оно не будет работать под pixel-perfect   -->
     <ul class="promo-container">
       <li class="promo-item bg-yellow new">
         <div class="promo-card-left">
@@ -175,6 +177,8 @@
               </button>
             </li>
           </ol>
+
+          <a class="slider-button-link button button-red button-text align-center" href="#">Открыть каталог</a>
         </div>
       </li>
 
@@ -303,8 +307,8 @@
               <p class="catalog-card-title title-3">Перфоратор BOSCH <br> BFG 3000</p>
               <span class="catalog-card-price-sale">22500 ₽</span>
               <div class="catalog-card-control">
-                <a class="button button-text" href="#">Купить</a>
-                <button class="button button-text" type="button">В закладки</button>
+                <button class="button button-text button-catalog" type="button">Купить</button>
+                <button class="button button-text button-catalog-inverse" type="button">В закладки</button>
               </div>
             </div>
             <a class="catalog-card-price" href="#">15500 ₽</a>
@@ -314,6 +318,10 @@
               <img class="catalog-card-image" src="./images/catalog/bosch-2.jpg" width="216" height="180" alt="">
               <p class="catalog-card-title title-3">Перфоратор BOSCH <br> BFG 6000</p>
               <span class="catalog-card-price-sale">30500 ₽</span>
+              <div class="catalog-card-control">
+                <button class="button button-text button-catalog" type="button">Купить</button>
+                <button class="button button-text button-catalog-inverse" type="button">В закладки</button>
+              </div>
             </div>
             <a class="catalog-card-price" href="#">25500 ₽</a>
           </li>
@@ -321,6 +329,10 @@
             <div class="catalog-card-top">
               <img class="catalog-card-image" src="./images/catalog/bosch-2.jpg" width="216" height="180" alt="">
               <p class="catalog-card-title title-3">Перфоратор BOSCH <br> BFG 2000</p>
+              <div class="catalog-card-control">
+                <button class="button button-text button-catalog" type="button">Купить</button>
+                <button class="button button-text button-catalog-inverse" type="button">В закладки</button>
+              </div>
             </div>
             <a class="catalog-card-price" href="#">25500 ₽</a>
           </li>
@@ -329,6 +341,10 @@
               <img class="catalog-card-image" src="./images/catalog/bosch-2.jpg" width="216" height="180" alt="">
               <p class="catalog-card-title title-3">Перфоратор BOSCH <br> BFG 3000</p>
               <span class="catalog-card-price-sale">22500 ₽</span>
+              <div class="catalog-card-control">
+                <button class="button button-text button-catalog" type="button">Купить</button>
+                <button class="button button-text button-catalog-inverse" type="button">В закладки</button>
+              </div>
             </div>
             <a class="catalog-card-price" href="#">15500 ₽</a>
           </li>
@@ -337,6 +353,10 @@
               <img class="catalog-card-image" src="./images/catalog/bosch-2.jpg" width="216" height="180" alt="">
               <p class="catalog-card-title title-3">Перфоратор BOSCH <br> BFG 6000</p>
               <span class="catalog-card-price-sale">30500 ₽</span>
+              <div class="catalog-card-control">
+                <button class="button button-text button-catalog" type="button">Купить</button>
+                <button class="button button-text button-catalog-inverse" type="button">В закладки</button>
+              </div>
             </div>
             <a class="catalog-card-price" href="#">25500 ₽</a>
           </li>
@@ -344,6 +364,10 @@
             <div class="catalog-card-top">
               <img class="catalog-card-image" src="./images/catalog/bosch-3.jpg" width="216" height="180" alt="">
               <p class="catalog-card-title title-3">Перфоратор BOSCH <br> BFG 2000</p>
+              <div class="catalog-card-control">
+                <button class="button button-text button-catalog" type="button">Купить</button>
+                <button class="button button-text button-catalog-inverse" type="button">В закладки</button>
+              </div>
             </div>
             <a class="catalog-card-price" href="#">25500 ₽</a>
           </li>
@@ -352,6 +376,10 @@
               <img class="catalog-card-image" src="./images/catalog/bosch-2.jpg" width="216" height="180" alt="">
               <p class="catalog-card-title title-3">Перфоратор BOSCH <br> BFG 3000</p>
               <span class="catalog-card-price-sale">22500 ₽</span>
+              <div class="catalog-card-control">
+                <button class="button button-text button-catalog" type="button">Купить</button>
+                <button class="button button-text button-catalog-inverse" type="button">В закладки</button>
+              </div>
             </div>
             <a class="catalog-card-price" href="#">15500 ₽</a>
           </li>
@@ -360,6 +388,10 @@
               <img class="catalog-card-image" src="./images/catalog/bosch-1.jpg" width="216" height="180" alt="">
               <p class="catalog-card-title title-3">Перфоратор BOSCH <br> BFG 6000</p>
               <span class="catalog-card-price-sale">30500 ₽</span>
+              <div class="catalog-card-control">
+                <button class="button button-text button-catalog" type="button">Купить</button>
+                <button class="button button-text button-catalog-inverse" type="button">В закладки</button>
+              </div>
             </div>
             <a class="catalog-card-price" href="#">25500 ₽</a>
           </li>
@@ -367,6 +399,10 @@
             <div class="catalog-card-top">
               <img class="catalog-card-image" src="./images/catalog/bosch-2.jpg" width="216" height="180" alt="">
               <p class="catalog-card-title title-3">Перфоратор BOSCH <br> BFG 2000</p>
+              <div class="catalog-card-control">
+                <button class="button button-text button-catalog" type="button">Купить</button>
+                <button class="button button-text button-catalog-inverse" type="button">В закладки</button>
+              </div>
             </div>
             <a class="catalog-card-price" href="#">25500 ₽</a>
           </li>
@@ -375,7 +411,7 @@
         <div class="pagination-wrapper">
           <ul class="pagination-list">
             <li class="pagination-item">
-              <a class="pagination-link">1</a>
+              <a class="pagination-link" href="#">1</a>
             </li>
             <li class="pagination-item">
               <a class="pagination-link pagination-current" href="#">2</a>
@@ -387,7 +423,7 @@
               <a class="pagination-link" href="#">4</a>
             </li>
           </ul>
-          <button class="pagination-show-more" type="button">Показать еще</button>
+          <button class="pagination-show-more button button-red button-text" type="button">Показать еще</button>
         </div>
       </div>
     </div>
@@ -396,12 +432,16 @@
   <!-- Сервисы/Преимущества -->
   <section class="advantages">
     <div class="page-container">
-      <h2 class="title-1 align-center">Сервисы</h2>
+      <h2 class="title-1 align-center advantages-title-h2">Сервисы</h2>
       <p class="advantages-text paragraph-big">Хороший интернет-магазин отличается от плохого не только
         ценами! Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
       <ul class="advantages-list">
         <li class="advantages-item">
-          <!-- Иконка в разметку, т.к в стайлгайде иконка серая, а в дизайне красная и непонятно в каких состояниях должно меняться -->
+          <!--
+          TODO: Иконка в разметку, т.к в стайлгайде иконка серая, а в дизайне красная и непонятно в каких состояниях должно меняться,
+                добавил на наведение на карточку.
+                Так же скорее всего использованы не те иконки, в стайлгайде есть более подходящие для гарантии и кредита
+          -->
           <svg class="advantages-icon" width="90" height="90" fill="none" xmlns="http://www.w3.org/2000/svg"
                viewBox="0 0 90 90">
             <path
@@ -412,7 +452,7 @@
               fill="inherit"/>
           </svg>
 
-          <span class="title-2">Доставка</span>
+          <span class="title-2 advantages-title">Доставка</span>
           <p class="advantages-description paragraph">Мы с удовольствием доставим ваш товар прямо к вашему подъезду
             совершенно
             бесплатно! Ведь мы неплохо заработаем,
@@ -433,11 +473,9 @@
               fill="inherit"/>
             <path d="M23.6 43.09a1.67 1.67 0 1 0-2.37-2.37 1.67 1.67 0 0 0 2.36 2.37Z" fill="inherit"/>
           </svg>
-          <span class="title-2">Гарантия</span>
-          <p class="advantages-description paragraph">Мы с удовольствием доставим ваш товар прямо к вашему подъезду
-            совершенно
-            бесплатно! Ведь мы неплохо заработаем,
-            поднимая его на ваш этаж!</p>
+          <span class="title-2 advantages-title">Гарантия</span>
+          <p class="advantages-description paragraph">Вы в течение года можете написать нам письмо с просьбой вернуть
+            сумму оплаты, и мы полностью возместим вам стоимость товара</p>
         </li>
 
         <li class="advantages-item">
@@ -450,9 +488,10 @@
               d="M23.32 62.85a3.82 3.82 0 1 0 0 7.65 3.82 3.82 0 0 0 0-7.65Zm0 5.1a1.28 1.28 0 1 1 0-2.55 1.28 1.28 0 0 1 0 2.55ZM33.52 52.65a3.82 3.82 0 1 0 0 7.65 3.82 3.82 0 0 0 0-7.65Zm0 5.1a1.27 1.27 0 1 1 0-2.55 1.27 1.27 0 0 1 0 2.55ZM22.05 18.23a1.27 1.27 0 0 0 1.27 1.27h34.43a1.28 1.28 0 0 0 0-2.55H23.33a1.27 1.27 0 0 0-1.28 1.28ZM62.85 19.5h1.27a1.28 1.28 0 0 0 0-2.55h-1.27a1.27 1.27 0 1 0 0 2.55Z"
               fill="inherit"/>
           </svg>
-          <span class="title-2">Кредит</span>
+          <span class="title-2 advantages-title">Кредит</span>
           <p class="advantages-description paragraph">Вы можете оформить кредит прямо на сайте! Для этого нужно выбрать
             понравившийся товар и заполнить поля и ждать результата одобрения кредита.
+            <br>
             Все как в банке, только проще!</p>
         </li>
       </ul>
@@ -462,22 +501,22 @@
   <section class="about-company page-container">
     <h2 class="visually-hidden">Информация о компании.</h2>
     <div class="about-company-block">
-      <span class="title-1">Компания «Техномарт»</span>
-      <p class="paragraph">Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и
-        строительства не оставит
+      <span class="about-company-title title-1">Компания «Техномарт»</span>
+      <p class="about-company-text paragraph">Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для
+        ремонта и строительства не оставит
         равнодушными любителей сэкономить на гастарбайтерах.
       </p>
-      <p class="paragraph">Мы можем доставить ваш товар в самые отдаленные точки России!
+      <p class="about-company-text paragraph">Мы можем доставить ваш товар в самые отдаленные точки России!
         Техномарт работает со многими транспортными компаниями:</p>
-      <a class="about-company" href="#">О компании</a>
+      <a class="about-company-link button button-red button-text align-center" href="#">О компании</a>
     </div>
 
     <div class="about-company-contact">
-      <span class="title-1">Контакты</span>
-      <p class="paragraph">Вы можете забрать товар сами, заехав в наш офис:
+      <span class="about-company-title title-1">Контакты</span>
+      <p class="about-company-contact-text paragraph">Вы можете забрать товар сами, заехав в наш офис:
       </p>
       <a class="about-company-map" href="#">
-        <img width="500" height="347" src="./images/map.png" alt="Карта расположения офиса компании">
+        <img class="map-img" width="500" height="347" src="./images/map.png" alt="Карта расположения офиса компании">
       </a>
     </div>
   </section>
@@ -489,29 +528,26 @@
   <div class="footer-light">
     <div class="page-container footer-container">
       <div class="footer-left">
-        <a class="logo" href="#">
-          <img class="logo-header" src="./images/logo.png" width="225" height="56" alt="Логотип ТЕХНОМАРТ">
+        <a class="logo-footer" href="#">
+          <img class="logo-img" src="./images/logo.png" width="225" height="56" alt="Логотип ТЕХНОМАРТ">
         </a>
-
-        <p class="paragraph">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
-          +7 (812) 555-05-55</p>
-
+        <address class="footer-address">
+          <p class="footer-address paragraph">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
+          <p class="paragraph">+7 (812) 555-05-55</p>
+        </address>
         <ul class="footer-social-list">
           <li class="footer-social-item">
-            <a class="footer-social-link" href="https://twitter.com/htmlacademy_ru" target="_blank">
-              <img src="" alt="">
+            <a class="footer-social-link twitter" href="https://twitter.com/htmlacademy_ru" target="_blank">
               <span class="visually-hidden">Twitter</span>
             </a>
           </li>
           <li class="footer-social-item">
-            <a class="footer-social-link" href="https://vk.com/htmlacademy" target="_blank">
-              <img src="" alt="">
+            <a class="footer-social-link vk" href="https://vk.com/htmlacademy" target="_blank">
               <span class="visually-hidden">ВКонтакте</span>
             </a>
           </li>
           <li class="footer-social-item">
-            <a class="footer-social-link" href="https://htmlacademy.ru/" target="_blank">
-              <img src="" alt="">
+            <a class="footer-social-link ok" href="https://htmlacademy.ru/" target="_blank">
               <span class="visually-hidden">Одноклассники</span>
             </a>
           </li>
@@ -541,7 +577,7 @@
   <div class="footer-dark">
     <div class="page-container footer-container">
       <div class="footer-left">
-        <span class="postscript">© 2010–2019 Компания «Техномарт» Все права защищены</span>
+        <p class="copyright postscript">© 2010–2019 Компания «Техномарт» Все права защищены</p>
       </div>
 
       <div class="footer-right align-end">
