@@ -209,15 +209,15 @@
       <div class="catalog-left-column">
         <h3 class="visually-hidden">Фильтр:</h3>
         <form class="catalog-filter-form" action="https://echo.htmlacademy.ru" method="get">
-          <fieldset class="catalog-filter-group">
-            <legend class="catalog-filter-title">Цена</legend>
-            <div class="range">
+          <fieldset class="catalog-filter-group price">
+            <legend class="catalog-filter-title price paragraph-bold">Цена</legend>
+            <div class="range range-background">
               <div class="range-scale">
-                <div class="range-bar">
-                  <button class="range-toggle toggle-min">
+                <div class="range-bar" style="width: 138px">
+                  <button class="range-toggle toggle-min" type="button">
                     <span class="visually-hidden">Изменить минимальную цену.</span>
                   </button>
-                  <button class="range-toggle toggle-max">
+                  <button class="range-toggle toggle-max" type="button">
                     <span class="visually-hidden">Изменить максимальную цену.</span>
                   </button>
                 </div>
@@ -226,64 +226,88 @@
             <ul class="catalog-filter-list catalog-filter-list-price">
               <li class="catalog-filter-item catalog-filter-item-price">
                 <label class="control control-price visually-hidden" for="price-min">от</label>
-                <input class="control-input control-input-price" type="number" name="price-min" id="price-min"
+                <input class="control-input control-input-price price-background postscript align-center" type="number"
+                       name="price-min"
+                       id="price-min"
                        value="0">
               </li>
               <li class="catalog-filter-item catalog-filter-item-price">
                 <label class="control control-price visually-hidden" for="price-max">до</label>
-                <input class="control-input control-input-price" type="number" name="price-max" id="price-max"
+                <input class="control-input control-input-price price-background postscript align-center" type="number"
+                       name="price-max"
+                       id="price-max"
                        value="30000">
               </li>
             </ul>
           </fieldset>
 
-          <fieldset class="catalog-filter-group">
-            <legend class="catalog-filter-title">Производители</legend>
-            <ul class="catalog-filter-list">
+          <fieldset class="catalog-filter-group producer">
+            <legend class="catalog-filter-title producer paragraph-bold">Производители</legend>
+            <ul class="catalog-filter-list producer-list">
               <li class="catalog-filter-item">
-                <label class="control">
-                  <input class="visually-hidden control-input" type="checkbox" name="producer" value="bosch" checked>
-                  <span class="control-mark"></span>BOSCH</label>
+                <label class="control control-check" tabindex="0">
+                  <input class="visually-hidden control-input" type="checkbox" name="producer" value="bosch" checked
+                         tabindex="-1">
+                  <span class="control-mark"></span>
+                  <span class="control-label">BOSCH</span>
+                </label>
               </li>
               <li class="catalog-filter-item">
-                <label class="control">
-                  <input class="visually-hidden control-input" type="checkbox" name="producer" value="interskol">
-                  <span class="control-mark"></span>ИНТЕРСКОЛ</label>
+                <label class="control control-check" tabindex="0">
+                  <input class="visually-hidden control-input" type="checkbox" name="producer" value="interskol"
+                         tabindex="-1">
+                  <span class="control-mark"></span>
+                  <span class="control-label">ИНТЕРСКОЛ</span>
+                </label>
               </li>
               <li class="catalog-filter-item">
-                <label class="control">
-                  <input class="visually-hidden control-input" type="checkbox" name="producer" value="makita">
-                  <span class="control-mark"></span>MAKIta</label>
+                <label class="control control-check" tabindex="0">
+                  <input class="visually-hidden control-input" type="checkbox" name="producer" value="makita" checked
+                         tabindex="-1">
+                  <span class="control-mark"></span>
+                  <span class="control-label">MAKIta</span>
+                </label>
               </li>
               <li class="catalog-filter-item">
-                <label class="control">
-                  <input class="visually-hidden control-input" type="checkbox" name="producer" value="dewalt">
-                  <span class="control-mark"></span>Dewalt</label>
+                <label class="control control-check" tabindex="0">
+                  <input class="visually-hidden control-input" type="checkbox" name="producer" value="dewalt"
+                         tabindex="-1">
+                  <span class="control-mark"></span>
+                  <span class="control-label">Dewalt</span>
+                </label>
               </li>
               <li class="catalog-filter-item">
-                <label class="control">
-                  <input class="visually-hidden control-input" type="checkbox" name="producer" value="hitachi">
-                  <span class="control-mark"></span>Hitachi</label>
+                <label class="control control-check" tabindex="0">
+                  <input class="visually-hidden control-input" type="checkbox" name="producer" value="hitachi"
+                         tabindex="-1">
+                  <span class="control-mark"></span>
+                  <span class="control-label">Hitachi</span>
+                </label>
               </li>
             </ul>
           </fieldset>
 
-          <fieldset class="catalog-filter-group">
-            <legend class="catalog-filter-title">Питание</legend>
-            <ul class="catalog-filter-list">
+          <fieldset class="catalog-filter-group power">
+            <legend class="catalog-filter-title power paragraph-bold">Питание</legend>
+            <ul class="catalog-filter-list power-list">
               <li class="catalog-filter-item">
-                <label class="control">
-                  <input class="visually-hidden control-input" type="radio" name="power" value="true" checked>
-                  <span class="control-mark"></span>Аккумуляторные</label>
+                <label class="control control-radio" tabindex="0">
+                  <input class="visually-hidden control-input" type="radio" name="power" value="true" checked
+                         tabindex="-1">
+                  <span class="control-mark"></span>
+                  <span class="control-label">Аккумуляторные</span>
+                </label>
               </li>
               <li class="catalog-filter-item">
-                <label class="control">
-                  <input class="visually-hidden control-input" type="radio" name="power" value="false">
-                  <span class="control-mark"></span>Сетевые</label>
+                <label class="control control-radio" tabindex="0">
+                  <input class="visually-hidden control-input" type="radio" name="power" value="false" tabindex="-1">
+                  <span class="control-mark"></span>
+                  <span class="control-label">Сетевые</span>
+                </label>
               </li>
             </ul>
           </fieldset>
-          <button class="button" type="submit">Показать</button>
+          <button class="button button-text button-submit" type="submit">Показать</button>
         </form>
       </div>
 
@@ -291,10 +315,11 @@
         <div class="catalog-sort">
           <div class="select sorting-type">
             <h3 class="visually-hidden">Сортировка:</h3>
-            <select class="select-control select-control-catalog" aria-label="Сортировать">
+            <select class="select-control select-control-catalog" aria-label="Сортировка">
               <option value="" disabled selected hidden>Сортировать</option>
-              <option value="popular">Популярные</option>
-              <option value="cheap">Цена</option>
+              <option value="popular">Сначала популярное</option>
+              <option value="cheap" selected>Сначала дешёвое</option>
+              <option value="expensive">Сначала дорогое</option>
             </select>
           </div>
         </div>
