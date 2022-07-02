@@ -87,6 +87,7 @@ body {
   --color-basic-gray-sale: #A9A9A9;
   --color-advantages: #F4F7F9;
   --color-range: #F7F3EC;
+  --color-email-placeholder: #BDBDBD;
 
   /* Текст  */
   --text-family-pt-sans: 'PT Sans', sans-serif;
@@ -1319,4 +1320,98 @@ input[type=number].control-input-price {
 
 .button-submit:active {
   opacity: 0.8;
+}
+
+
+.feedback {
+  margin-top: 29px;
+  margin-bottom: 29px;
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback-mail,
+.htmlacademy-link {
+  text-decoration: none;
+  color: var(--color-special-light-yellow);
+}
+
+.feedback-htmlacademy {
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 22px;
+}
+
+.newsletter p {
+  margin: 0;
+  margin-bottom: 3px;
+}
+
+.newsletter-form {
+  display: flex;
+  width: 260px;
+}
+
+.email-field {
+  flex-grow: 1;
+  padding: 10px 16px 10px;
+  border-radius: 2px;
+  border: solid var(--color-basic-green) 1px;
+  color: var(--color-basic-gray);
+  cursor: pointer;
+}
+
+input.email-field::placeholder {
+  color: var(--color-email-placeholder);
+}
+
+.email-field:invalid {
+  border: solid var(--color-basic-red) 1px;
+}
+
+.email-field:invalid.email-field:hover {
+  border: solid var(--color-basic-red) 1px;
+  outline: solid var(--color-basic-red) 1px;
+}
+
+.email-field:focus {
+  padding-left: 15px;
+  padding-bottom: 10px;
+  padding-top: 9px;
+  border: solid var(--color-basic-green) 2px;
+  outline: solid var(--color-special-yellow) 1px;
+}
+
+.button-email {
+  flex-shrink: 0;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  position: relative;
+  background-color: var(--color-basic-green);
+  border: 0;
+  border-radius: 2px;
+}
+
+.button-email:after {
+  background-image: url("../images/icons/cart.svg");
+  background-size: 100% 100%;
+  display: block;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  content: "";
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.button-email:hover,
+.button-email:focus {
+  background-color: var(--color-basic-green-hover);
+}
+
+.button-email:active {
+  background-color: var(--color-basic-green-click);
 }
