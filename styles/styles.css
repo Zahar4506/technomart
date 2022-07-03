@@ -88,6 +88,7 @@ body {
   --color-advantages: #F4F7F9;
   --color-range: #F7F3EC;
   --color-email-placeholder: #BDBDBD;
+  --color-search-icon: #DADADA;
 
   /* Текст  */
   --text-family-pt-sans: 'PT Sans', sans-serif;
@@ -160,36 +161,42 @@ body {
   line-height: var(--text-title-height-2);
   font-weight: var(--text-weight-bold);
   text-transform: uppercase;
+  font-family: var(--text-family-pt-sans);
 }
 
 .title-3 {
   font-size: var(--text-title-size-3);
   line-height: var(--text-title-height-3);
   font-weight: var(--text-weight-bold);
+  font-family: var(--text-family-pt-sans);
 }
 
 .paragraph-big {
   font-size: var(--text-paragraph-size-1);
   line-height: var(--text-paragraph-height);
   font-weight: var(--text-weight-regular);
+  font-family: var(--text-family-pt-sans);
 }
 
 .paragraph {
   font-size: var(--text-paragraph-size-2);
   line-height: var(--text-paragraph-height);
   font-weight: var(--text-weight-regular);
+  font-family: var(--text-family-pt-sans);
 }
 
 .paragraph-bold {
   font-size: var(--text-paragraph-size-2);
   line-height: var(--text-paragraph-height);
   font-weight: var(--text-weight-bold);
+  font-family: var(--text-family-pt-sans);
 }
 
 .postscript {
   font-size: var(--text-postscript-size-1);
   line-height: var(--text-postscript-height);
   font-weight: var(--text-weight-regular);
+  font-family: var(--text-family-pt-sans);
 }
 
 .button-text {
@@ -281,6 +288,10 @@ body {
   color: var(--color-basic-gray-light);
 }
 
+.navigation-item:active {
+  opacity: 0.6;
+}
+
 /* Класс для активного элемента меню вешается на li */
 .navigation-active {
   background-color: var(--color-basic-gray-hover);
@@ -295,10 +306,38 @@ body {
   color: var(--color-basic-white);
 }
 
+/* TODO: Закомментирован блок для стайлгайда, он не совпадает с pixel-perfect,
+        поэтому ниже блок нормальной реализации, а дальше подогнанный */
+/*.navigation-menu .navigation-link {*/
+/*  padding: 21px 26px 24px 26px;*/
+/*  display: block;*/
+/*}*/
 .navigation-menu .navigation-link {
-  padding: 21px 26px 24px 26px;
+  padding: 21px 48px 24px 0;
   display: block;
 }
+
+.navigation-menu li:nth-child(1) .navigation-link {
+  padding: 21px 48px 24px 4px;
+}
+
+.navigation-menu li:nth-child(2) .navigation-link {
+  padding: 21px 48px 24px 4px;
+}
+
+.navigation-menu li:nth-child(3) .navigation-link {
+  padding: 21px 52px 24px 0;
+}
+
+.navigation-menu li:nth-child(5) .navigation-link {
+  padding: 21px 46px 24px 0;
+}
+
+.navigation-menu li:nth-child(6) .navigation-link {
+  padding: 21px 50px 24px 0;
+}
+
+/* Все выше описанное, бред для подгонки*/
 
 .promo {
   padding-top: 52px;
@@ -416,6 +455,15 @@ body {
   grid-template-rows: repeat(2, minmax(180px, max-content));
 }
 
+/* В макете gap не одинаковый, так что фиксим*/
+.promo-pixel-perfect {
+  margin-top: -3px;
+}
+
+.promo-pixel-perfect-green {
+  margin-bottom: 3px;
+}
+
 .promo-slider {
   grid-column: 1/3;
   grid-row: 2/4;
@@ -450,7 +498,7 @@ body {
 .catalog-list {
   list-style-type: none;
   margin: 0;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
   padding: 0;
 
   display: grid;
@@ -464,7 +512,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 26px 26px 25px 26px;
+  padding: 26px 26px 24px 26px;
   text-align: center;
   justify-content: space-between;
 }
@@ -539,34 +587,56 @@ body {
   outline: 0;
 }
 
-/* TODO: доделать кнопки, сильно много времени потратил*/
+/* Интересные кнопки для цены - флажки, не ломаются до 10000000*/
 .catalog-card-price {
-  /*position: relative;*/
-  /*width: 150px;*/
-  /*height: 40px;*/
-  /*color: #FFFFFF;*/
+  position: relative;
+  width: 120px;
+  height: 40px;
+  color: var(--color-basic-white);
   background-color: var(--color-basic-red);
-  /*padding: 16px;*/
-  /*border: solid 1px #f4d046;*/
-  /*border-radius: 4px;*/
+  padding: 11px;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-left: -21px;
 }
 
 .catalog-card-price::after {
-  /*content: "";*/
-  /*transform: rotate(45deg);*/
-  /*-ms-transform: rotate(45deg);*/
-  /*-webkit-transform: rotate(45deg);*/
-  /*-o-transform: rotate(45deg);*/
-  /*-moz-transform: rotate(45deg);*/
-  /*background-color: #f4d046;*/
-  /*width: 40px;*/
-  /*height: 40px;*/
-  /*top: calc(50% - 20px);*/
-  /*left: calc(76%);*/
-  /*position: absolute;*/
-  /*border-radius: 4px;*/
-  /*z-index: -1;*/
+  content: "";
+  transform: rotate(45deg);
+  background-color: var(--color-basic-red);
+  width: 30px;
+  height: 30px;
+  top: calc(50% - 15px);
+  right: -12px;
+  position: absolute;
+  border-radius: 4px;
+  z-index: -1;
 }
+
+.catalog-card-price:hover,
+.catalog-card-price:hover::after {
+  background-color: var(--color-basic-red-hover);
+}
+
+.catalog-card-price:active,
+.catalog-card-price:active::after {
+  background-color: var(--color-basic-red-click);
+}
+
+.catalog-card-price:focus:active,
+.catalog-card-price:focus:active::after {
+  box-shadow: none;
+}
+
+.catalog-card-price:focus {
+  outline: 0;
+  box-shadow: -2px 2px 0 var(--color-black);
+}
+
+.catalog-card-price:focus::after {
+  box-shadow: 1px 2px 0 var(--color-black);
+}
+
 
 .catalog-card-price-sale {
   text-decoration: line-through;
@@ -615,12 +685,13 @@ body {
 .about-company {
   display: flex;
   justify-content: space-between;
-  padding-top: 52px;
-  margin-bottom: 52px;
+  padding-top: 51px;
+  margin-bottom: 51px;
 }
 
 .about-company-block {
   width: 550px;
+  margin-left: 1px;
 }
 
 .about-company-contact {
@@ -647,6 +718,7 @@ body {
   z-index: 1;
 }
 
+/*Не хотелось подключать ради одной надписи курсивом целый шрифт в проект*/
 .about-company-header {
   color: var(--color-basic-red);
   font-style: italic;
@@ -690,6 +762,13 @@ body {
   margin-right: 8px;
 }
 
+.about-company-phone:hover {
+  opacity: 0.6;
+}
+
+.about-company-phone:active {
+  opacity: 0.8;
+}
 
 .logo {
   width: 220px;
@@ -705,7 +784,7 @@ body {
 
 .slider-controls {
   position: absolute;
-  top: 50%;
+  top: 51%;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -757,7 +836,7 @@ body {
 
 .slider-pagination {
   position: absolute;
-  bottom: 22px;
+  bottom: 20px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -822,17 +901,53 @@ body {
 }
 
 .catalog-sort {
-  margin-top: 32px;
+  margin-top: 34px;
   margin-bottom: 31px;
 }
 
-.select-control {
+
+.select-control-container {
+  position: relative;
   width: 280px;
-  padding: 8px 27px 8px 16px;
+}
+
+.select-control {
+  width: 100%;
+  padding: 7px 27px 7px 16px;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 2px;
+  border: solid var(--color-basic-gray) 1px;
+  color: var(--color-basic-gray);
+}
+
+.select-control:hover,
+.select-control:active {
+  border: solid var(--color-basic-green) 1px;
+}
+
+.select-control:focus {
+  border: solid var(--color-basic-green) 1px;
+  outline: solid var(--color-special-yellow) 1px;
+}
+
+.select-control:focus + .select-arrow {
+  fill: var(--color-basic-green);
+}
+
+.select-arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  bottom: 50%;
+  display: block;
+  padding: 0;
+  margin: auto;
+  fill: var(--color-basic-gray);
 }
 
 .catalog-card-image {
-  margin-bottom: 14px;
+  margin-bottom: 13px;
   vertical-align: middle;
 }
 
@@ -846,7 +961,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  top: 39px;
+  top: 38px;
+  /* для pixel-perfect в макете left-45px, right-36px */
+  margin-left: 4px;
 }
 
 .button-catalog {
@@ -939,6 +1056,7 @@ body {
 
 .advantages-description {
   margin: 0;
+  margin-left: 2px;
 }
 
 .about-company-title {
@@ -954,7 +1072,7 @@ body {
 }
 
 .about-company-text:last-of-type {
-  margin-bottom: 52px;
+  margin-bottom: 50px;
 }
 
 .about-company-contact-text {
@@ -1127,7 +1245,7 @@ body {
 }
 
 .catalog-filter-group.power {
-  margin-bottom: 47px;
+  margin-bottom: 48px;
 }
 
 .catalog-filter-title {
@@ -1307,7 +1425,7 @@ input[type=number].control-input-price {
   border: solid var(--color-basic-gray) 2px;
   background-color: var(--color-basic-white-rgba);
   width: 220px;
-  padding: 11px 12px;
+  padding: 9px 12px;
 }
 
 .button-submit:hover {
@@ -1334,6 +1452,11 @@ input[type=number].control-input-price {
 .htmlacademy-link {
   text-decoration: none;
   color: var(--color-special-light-yellow);
+}
+
+.feedback-mail:hover,
+.htmlacademy-link:hover {
+  color: var(--color-special-yellow);
 }
 
 .feedback-htmlacademy {
@@ -1365,13 +1488,15 @@ input.email-field::placeholder {
   color: var(--color-email-placeholder);
 }
 
-.email-field:invalid {
+.email-field:focus:invalid {
   border: solid var(--color-basic-red) 1px;
+  padding-left: 16px;
 }
 
 .email-field:invalid.email-field:hover {
   border: solid var(--color-basic-red) 1px;
   outline: solid var(--color-basic-red) 1px;
+  padding-left: 16px;
 }
 
 .email-field:focus {
@@ -1414,4 +1539,191 @@ input.email-field::placeholder {
 
 .button-email:active {
   background-color: var(--color-basic-green-click);
+}
+
+.search-form {
+  width: 100%;
+  position: relative;
+  margin-right: 17px;
+}
+
+.search-catalog-field {
+  width: 100%;
+  border: 0;
+  padding: 9px 62px 12px 53px;
+  background-color: inherit;
+  appearance: none;
+}
+
+.search-catalog-field::placeholder {
+  color: var(--color-basic-white);
+}
+
+.search-catalog-field:hover,
+.search-catalog-field:hover + .search-icon {
+  opacity: 0.6;
+}
+
+.search-catalog-field:focus:hover,
+.search-catalog-field:focus:hover + .search-icon {
+  opacity: 1;
+}
+
+.search-catalog-field:focus {
+  background-color: var(--color-basic-background);
+  color: var(--color-basic-gray);
+  outline: 0;
+}
+
+.search-catalog-field:focus::placeholder {
+  color: var(--color-basic-gray-light);
+}
+
+.search-icon {
+  position: absolute;
+  top: 12px;
+  left: 21px;
+  fill: var(--color-search-icon);
+}
+
+.search-icon-clear {
+  display: none;
+}
+
+.search-catalog-field:focus ~ .search-icon-clear {
+  display: block;
+  position: absolute;
+  top: 16px;
+  right: 19px;
+  fill: var(--color-basic-gray-hover);
+  cursor: pointer;
+}
+
+.search-catalog-field:placeholder-shown ~ .search-icon-clear {
+  display: none;
+}
+
+/*Убираем дефолтную иконки в поле поиска*/
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: none;
+}
+
+
+.navigation-user {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.navigation-user .navigation-link {
+  padding: 14px 0 13px;
+  display: block;
+}
+
+.navigation-user .user-name {
+  padding: 10px 0 11px;
+  display: block;
+  margin-right: 14px;
+}
+
+.navigation-user .deactive {
+  display: none;
+}
+
+.navigation-user .navigation-link {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.user-name {
+  white-space: nowrap;
+}
+
+.login {
+  margin-right: 2px;
+}
+
+.login-icon {
+  fill: var(--color-basic-white);
+  margin-right: 10px;
+}
+
+.login-icon-user {
+  fill: var(--color-basic-white);
+  margin-right: 8px;
+}
+
+.login-icon-logout {
+  fill: var(--color-basic-white);
+}
+
+.logout {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.button-cart {
+  border: 0;
+  background-color: var(--color-basic-green);
+  display: flex;
+  align-items: center;
+  width: 170px;
+  padding: 12px 10px;
+  color: var(--color-basic-white);
+  cursor: pointer;
+  text-decoration: none;
+  /* для pixel-perfect*/
+  margin-right: 2px;
+  margin-top: -5px;
+}
+
+.button-cart:hover {
+  background-color: var(--color-basic-green-hover);
+}
+
+.button-cart:active {
+  background-color: var(--color-basic-green-click);
+}
+
+.navigation-cart .navigation-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation-cart .navigation-cart-button:hover {
+  background-color: inherit;
+}
+
+.navigation-cart .navigation-cart-button:active {
+  opacity: 1;
+}
+
+
+.navigation-icon {
+  fill: var(--color-basic-white);
+  opacity: 0.6;
+}
+
+.favorite {
+  /*margin-right: 26px;*/
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.cart {
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-right: 16px;
+}
+
+.inactive {
+  display: none;
 }
