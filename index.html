@@ -43,7 +43,7 @@
       </form>
 
       <!-- Класс deactive для скрытия отображения нужных полей имя пользователя + выход или кнопка залогиниться-->
-      <ul class="navigation-list navigation-user">
+      <ul class="navigation-list navigation-user popover-anchor">
         <li class="navigation-item deactive">
           <a class="navigation-link user-name paragraph" href="">
             <svg class="login-icon-user" width="16" height="17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,15 +52,28 @@
             </svg>
             Равшан Джамшутович</a>
         </li>
-        <li class="navigation-item deactive">
+        <li class="navigation-item popover-click deactive">
           <a class="navigation-link logout" href="">
             <svg width="16" height="17" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path class="login-icon-logout" fill-rule="evenodd" clip-rule="evenodd"
                     d="M7 14.39H2v-12h5v-2H0v16h7v-2Zm4.7-1.71L8.47 9.44H16v-2H8.46l3.25-3.25-1.42-1.41-4.95 4.95-.7.7.7.71 4.95 4.95 1.42-1.41Z"/>
             </svg>
             <span class="visually-hidden">Выйти</span>
-          </a></li>
-        <li class="navigation-item">
+          </a>
+          <!--    Для отображения выпадающего меню убрать popover-close     -->
+          <div class="popover popover-personal popover-close">
+            <button class="popover-close-button">
+              <span class="visually-hidden">Закрыть</span>
+            </button>
+            <section class="popover-content">
+              <span class="popover-title title-2 popover-personal-title">Здравствуйте,<br> Равшан Джамшутович</span>
+              <a class="button-text postscript button-popover-personal" href="#">мои заказы</a>
+              <a class="button-text postscript button-popover-personal" href="#">личный кабинет</a>
+              <button class="button button-text button-popover-inverse" type="button">Выйти</button>
+            </section>
+          </div>
+        </li>
+        <li class="navigation-item popover-click">
           <a class="navigation-link login button-text" href="">
             <svg class="login-icon" width="16" height="17" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -69,6 +82,37 @@
             </svg>
             Войти
           </a>
+          <!--    Для отображения выпадающего меню убрать popover-close     -->
+          <div class="popover popover-login popover-close">
+            <button class="popover-close-button">
+              <span class="visually-hidden">Закрыть</span>
+            </button>
+            <section class="popover-content">
+              <span class="popover-title title-2">Личный кабинет</span>
+              <form class="login-form" action="https://echo.htmlacademy.ru/" method="post">
+                <label class="visually-hidden" for="username">Логин</label>
+                <input class="popover-username-field paragraph" type="text" id="username" name="login-date"
+                       placeholder="Логин" required>
+                <label class="visually-hidden" for="password">Логин</label>
+                <input class="popover-password-field paragraph" type="password" id="password" name="password-date"
+                       placeholder="Пароль" required>
+
+                <div class="popover-settings-container">
+                  <label class="control control-check control-remember" tabindex="0">
+                    <input class="visually-hidden control-input" type="checkbox" name="remember" value="true" checked
+                           tabindex="-1">
+                    <span class="control-mark"></span>
+                    <span class="control-label postscript">Запомнить меня</span>
+                  </label>
+                  <a class="reset-password postscript" href="#">Забыл пароль</a>
+                </div>
+                <div class="popover-submit-container">
+                  <button class="button button-text button-popover" type="submit">Войти</button>
+                  <a class="button button-text button-popover-inverse button-registration align-center" href="#">Регистрация</a>
+                </div>
+              </form>
+            </section>
+          </div>
         </li>
       </ul>
     </div>

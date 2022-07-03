@@ -1727,3 +1727,203 @@ input[type="search"]::-webkit-search-results-decoration {
 .inactive {
   display: none;
 }
+
+/* Выпадающее меню */
+.popover-anchor {
+  position: relative;
+}
+
+.popover {
+  position: absolute;
+  top: 12px;
+  right: 0;
+  z-index: 1;
+  width: 360px;
+  /*min-height: 330px;*/
+  padding: 22px 29px 35px 31px;
+  color: var(--color-black);
+  background-color: var(--color-basic-white);
+  box-shadow: var(--shadow-big);
+  border-radius: 2px;
+}
+
+.popover-title {
+  display: block;
+  margin-bottom: 43px;
+}
+
+.popover-settings-container {
+  display: flex;
+  margin-bottom: 38px;
+  align-items: center;
+}
+
+.popover-submit-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-popover {
+  border-radius: 2px;
+  border: 0;
+  background-color: var(--color-basic-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 145px;
+  padding: 11px 25px 11px 25px;
+  color: var(--color-basic-white);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button-popover::before {
+  background-image: url("../images/icons/login.svg");
+  background-size: 100% 100%;
+  display: block;
+  background-repeat: no-repeat;
+  content: "";
+  width: 15px;
+  height: 14px;
+  min-width: 15px;
+  min-height: 14px;
+  margin-right: 14px;
+}
+
+.button-popover:hover {
+  background-color: var(--color-basic-green-hover);
+}
+
+.button-popover:active {
+  background-color: var(--color-basic-green-click);
+}
+
+.button-popover-inverse {
+  border-radius: 2px;
+  border: solid var(--color-basic-green) 2px;
+  background-color: var(--color-basic-white);
+  width: 145px;
+  padding: 9px 8px 9px 8px;
+  color: var(--color-basic-gray-hover);
+  cursor: pointer;
+}
+
+.button-popover-inverse:hover {
+  border: solid var(--color-basic-gray) 2px;
+}
+
+.button-popover-inverse:active {
+  border: solid var(--color-basic-gray-light) 2px;
+  color: var(--color-basic-gray-light);
+}
+
+.button-registration {
+  text-decoration: none;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.control-remember {
+  color: var(--color-black);
+  margin-right: 13px;
+}
+
+.reset-password {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+
+.navigation-item:active.popover-click {
+  opacity: 1;
+}
+
+.popover-close-button {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  border: none;
+  background-image: url("../images/icons/close-popover.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  background-color: var(--color-basic-white);
+  border-radius: 50%;
+  height: 20px;
+  min-height: 20px;
+  width: 20px;
+  min-width: 20px;
+}
+
+.popover-close-button:hover {
+  opacity: 0.6;
+}
+
+.popover-close-button:active {
+  opacity: 0.8;
+}
+
+.login-form input {
+  padding: 8px 9px 12px 12px;
+  color: var(--color-basic-gray);
+  border: solid var(--color-basic-gray-light) 1px;
+  border-radius: 2px;
+}
+
+.login-form input::placeholder {
+  color: var(--color-black);
+}
+
+.login-form input:hover {
+  padding: 8px 9px 12px 12px;
+  color: var(--color-basic-gray);
+  border: solid var(--color-basic-green) 1px;
+  cursor: pointer;
+}
+
+.login-form input:focus {
+  padding: 8px 9px 12px 12px;
+  color: var(--color-basic-gray);
+  border: solid var(--color-basic-green) 1px;
+  outline: solid var(--color-special-yellow) 1px;
+}
+
+
+.login-form input:focus:invalid {
+  border: solid var(--color-basic-red) 1px;
+}
+
+.popover-username-field {
+  margin-bottom: 7px;
+}
+
+.popover-password-field {
+  margin-bottom: 12px;
+}
+
+/*Класс который скрывает поповер*/
+.popover-close {
+  display: none;
+}
+
+.button-popover-personal {
+  color: var(--color-basic-gray);
+  text-decoration: none;
+  margin-bottom: 23px;
+  display: block;
+}
+
+.button-popover-personal:hover {
+  color: var(--color-basic-gray-hover);
+}
+
+.button-popover-personal:active {
+  color: var(--color-basic-gray-click);
+}
+
+.popover-personal-title {
+  margin-bottom: 26px;
+}
